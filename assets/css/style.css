@@ -1,0 +1,43 @@
+body {
+    overflow: auto;
+    background-color: #222;
+    background-image: url("https://cdn.wallpapersafari.com/44/40/FGJpeK.jpg");
+    /*background image color is #A0B7C7*/
+    background-size: cover;
+}
+.card {
+	background-color: #FFD8CA;
+    background: #FBD3E9;
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid red;
+    width: 1000px;
+    height: 100vh;
+    box-shadow: 10px 10px 5px grey;
+}
+/*
+STARTING SCREEN
+*/
+
+#startGame h1 {
+    padding-bottom: 200px;
+    border: 2px solid cyan;
+}
+
+.btn {
+    font-size: 30px;
+}
+
+
+/*
+QUESTION FORM
+*/
+
+.col-md-6 {
+	height: 200px;
+}
+
+.border {
+	border: 3px solid blue;
+}
