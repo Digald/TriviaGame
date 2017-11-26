@@ -21,27 +21,30 @@
         <!-- Starting Page -->
         <div id="startGame" class="card">
             <h1>League of Legends: Trivia Game</h1>
-            <button type="button" class="btn btn-default btn-lg">Click Here to Start!</button>
+            <button type="button" id="startBtn" class="btn btn-default btn-lg btn-block">Click Here to Start!</button>
         </div>
+
         <!-- Questions Form -->
         <div id="multipleChoice" class="card">
-            <h1>Question 1: lkadf adkfj lakdjlflk adkjfladlkjf adjdk sksksls skskdfl?</h1>
-            <h2>Time Left: <span id="timeleft">4</span></h2>
+            <h1 id="question"></h1>
+            <h2>Time Left: <span id="timeleft"></span></h2>
             <div class="row">
-            	<div class="col-md-6 border">Answer 1: kjadfl adkfj;al dfl lk flkjald;kfj adfljadfjla; dflkj df aldfjladfkj df jldfjl;adf </div>
-            	<div class="col-md-6 border">Answer 2 lkajdlfkjadlfk lka dflkjadfl dl df adlf adfj sadlfj asld df jsafj sdfj sdfj sad fjasdfjk sdlf </div>
+            	<div id="choice1" class="answer col-md-6 border"></div>
+            	<div id="choice2" class="answer col-md-6 border"></div>
             </div>
             <div class="row">
-            	<div class="col-md-6 border">Answer 3</div>
-            	<div class="col-md-6 border">Answer 4</div>
+            	<div id="choice3" class="answer col-md-6 border"></div>
+            	<div id="choice4" class="answer col-md-6 border"></div>
             </div>
         </div>
+
         <!-- Transition Between Questions -->
         <div id="transitionPage" class="card">
-        	<h1>Correct!</h1>
-        	<h2>Next question starting in: <span>5</span> seconds</h2>
-        	<h3>The answer to the question was: <span>answer</span></h3>
+        	<h1 id="result"></h1>
+        	<h2>The answer to the question was: <span id="correctAns"></span></h2>
+        	<h3>Next question starting in: <span id="toNextQuestion"></span> seconds</h3>
         </div>
+
         <!-- Ending Screen -->
         <div id="endScreen" class="card">
         	
