@@ -17,37 +17,39 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container card">
         <!-- Starting Page -->
-        <div id="startGame" class="card">
-            <h1>League of Legends: Trivia Game</h1>
+        <h1>League of Legends Trivia Game</h1>
+        <div id="startGame" class="">
             <button type="button" id="startBtn" class="btn btn-default btn-lg btn-block">Click Here to Start!</button>
         </div>
-
         <!-- Questions Form -->
-        <div id="multipleChoice" class="card">
+        <div id="multipleChoice" class="">
             <h1 id="question"></h1>
             <h2>Time Left: <span id="timeleft"></span></h2>
             <div class="row">
-            	<div id="choice1" class="answer col-md-6 border"></div>
-            	<div id="choice2" class="answer col-md-6 border"></div>
+                <div id="choice1" class="answer col-md-6 border"></div>
+                <div id="choice2" class="answer col-md-6 border"></div>
             </div>
             <div class="row">
-            	<div id="choice3" class="answer col-md-6 border"></div>
-            	<div id="choice4" class="answer col-md-6 border"></div>
+                <div id="choice3" class="answer col-md-6 border"></div>
+                <div id="choice4" class="answer col-md-6 border"></div>
             </div>
         </div>
-
         <!-- Transition Between Questions -->
-        <div id="transitionPage" class="card">
-        	<h1 id="result"></h1>
-        	<h2>The answer to the question was: <span id="correctAns"></span></h2>
-        	<h3>Next question starting in: <span id="toNextQuestion"></span> seconds</h3>
+        <div id="transitionPage" class="">
+            <h1 id="result"></h1>
+            <h2>The answer to the question was: <span id="theAns"></span></h2>
+            <h3>Next question will start shortly!
+            <!-- array of images to post for each question? -->
         </div>
-
         <!-- Ending Screen -->
-        <div id="endScreen" class="card">
-        	
+        <div id="endScreen" class="">
+        	<h1>Let's see how well you did-</h1>
+        	<h2>Correct Answers: <span id="numRight"></span></h2>
+        	<h2>Wrong Answers: <span id="numWrong"></span></h2>
+        	<h2>Overall Score: <span id="percentage"></span></h2>
+        	<button type="button" id="resetBtn">Click Here to Try Again</button>
         </div>
     </div>
 </body>

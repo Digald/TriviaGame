@@ -28,22 +28,28 @@ $(document).ready(function() {
         ["Skarner", "Lulu", "Bard", "Teemo"]
     ];
     var correctAnswer = [0, 2, 0, 2, 3];
+    var rightAns = ["Volibear", "Sona", "Fox", "Poros", "Teemo"];
     var chosenAnswer;
 
     // time varibles and functions
-    var slideCount = 0;
     var countdown;
     var intervalId;
     var correct = 0;
     var wrong = 0;
-    var result;
+    var result = "";
     // stops the current countdown
     function stop() {
         clearInterval(intervalId);
     }
-    // counts down the timer. when it hits zero, it stops and moves on
+    // Timer and display questions
     function questionTimer() {
-    	countdown = 30;
+        startGame.hide();
+        transitionPage.hide();
+        endScreen.hide();
+        gameForm.show();
+        questionHTML();
+        countdown = 10; // change question time
+        $("#timeleft").html(countdown);
         intervalId = setInterval(questionCount, 1000);
 
         function questionCount() {
@@ -51,6 +57,7 @@ $(document).ready(function() {
                 stop();
                 gameForm.hide();
                 transitionPage.show();
+                isWrong();
             }
             if (countdown > 0) {
                 countdown--;
@@ -60,73 +67,94 @@ $(document).ready(function() {
     }
 
     function transitionTimer() {
-    	countdown = 5;
-    	intervalId = setInterval(transitionCount, 1000);
+        console.log(slideCount);
+        if (slideCount < 4) {
+            slideCount++;
+            questionTimer();
+        } else {
+            gameForm.hide();
+            transitionPage.hide();
+            startGame.hide();
+            endScreen.show();
+            endScreenHTML();
 
-    	function transitionCount() {
-    		if (countdown === 0 ){
-    			stop();
-    			transitionPage.hide();
-    			gameForm.show();
-    		}
-
-    		if (countdown > 0) {
-    			countdown--;
-    		}
-    		$("#toNextQuestion").html(countdown);
-    	}
+        }
     }
 
+    // functions to fill in HTML upon showing the differnt screens
     function questionHTML() {
-    	$("#question").html(questions[slideCount]);
-    	$("#choice1").html(answers[slideCount][0]);
-    	$("#choice2").html(answers[slideCount][1]);
-    	$("#choice3").html(answers[slideCount][2]);
-    	$("#choice4").html(answers[slideCount][3]);
+        $("#question").html(questions[slideCount]);
+        $("#choice1").html(answers[slideCount][0]);
+        $("#choice2").html(answers[slideCount][1]);
+        $("#choice3").html(answers[slideCount][2]);
+        $("#choice4").html(answers[slideCount][3]);
     }
 
     function transitionHTML() {
-    	$("#result").html(result);
-    	$("correctAns").html(answers[slideCount][correctAnswer[slideCount]]);
+        $("#result").html(result);
+        $("#theAns").html(rightAns[slideCount]);
+        console.log(answers[slideCount][correctAnswer[slideCount]]);
+    }
+
+    function endScreenHTML() {
+        var finalScore = Math.round((correct / questions.length) * 100);
+        $("#numRight").html(correct);
+        $("#numWrong").html(wrong);
+        $("#percentage").html(finalScore + "%");
     }
 
     // From start screen, start game
     $("#startBtn").click(function() {
-        startGame.hide();
-        gameForm.show();
+        slideCount = 0;
         questionTimer();
-        questionHTML();
     });
 
     // pick from the answer choices
     $(".answer").click(function() {
-    	chosenAnswer = $(this).text();
-    	console.log(chosenAnswer);
-    	if (chosenAnswer === answers[slideCount][correctAnswer[slideCount]]) {
-    		stop();
-    		isCorrect();
-    	} else {
-    		stop();
-    		isWrong();
-    	}
-    });
+        chosenAnswer = $(this).text();
+        if (chosenAnswer === answers[slideCount][correctAnswer[slideCount]]) {
+            stop();
+            isCorrect();
+        } else {
+            stop();
+            isWrong();
+        }
+    }); // end of check chosen answer
 
     // score functions
     function isCorrect() {
-    	result = "Correct!";
-    	correct++;
-    	transitionTimer();
-    	gameForm.hide();
-    	transitionPage.show();
-    	transitionHTML();
-    }
+        result = "Correct!";
+        transitionHTML();
+        correct++;
+        gameForm.hide();
+        transitionPage.show();
+        setTimeout(transitionTimer, 1000); // change wait time
+    } // end of isCorrect()
 
     function isWrong() {
-    	wrong--;
-    	transitionTimer();
-    	gameForm.hide();
-    	transitionPage.show();
+        result = "Wrong!";
+        transitionHTML();
+        wrong++;
+        gameForm.hide();
+        transitionPage.show();
+        setTimeout(transitionTimer, 1000); // change wait time
+    } // end of isWrong
+
+    $("#resetBtn").click(function() {
+    	slideCount = 0;
+    	resetAutomatic();
+    });
+
+    function resetAutomatic() {
+    	// reset variables
+        var countdown;
+        var intervalId;
+        var correct = 0;
+        var wrong = 0;
+        var result = "";
+        questionTimer();
+
     }
 
 
-});
+}); // end of document ready
