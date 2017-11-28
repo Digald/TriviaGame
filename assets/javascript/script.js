@@ -27,6 +27,8 @@ $(document).ready(function() {
         ["Teemos", "Wolves", "Poros", "Cats"],
         ["Skarner", "Lulu", "Bard", "Teemo"]
     ];
+
+    var images = [];
     var correctAnswer = [0, 2, 0, 2, 3];
     var rightAns = ["Volibear", "Sona", "Fox", "Poros", "Teemo"];
     var chosenAnswer;
@@ -70,6 +72,7 @@ $(document).ready(function() {
         console.log(slideCount);
         if (slideCount < 4) {
             slideCount++;
+            console.log(slideCount);
             questionTimer();
         } else {
             gameForm.hide();
@@ -93,7 +96,11 @@ $(document).ready(function() {
     function transitionHTML() {
         $("#result").html(result);
         $("#theAns").html(rightAns[slideCount]);
-        console.log(answers[slideCount][correctAnswer[slideCount]]);
+        if (slideCount < 4) {
+        	$("#message").html("The next question will start shortly!");
+        } else {
+        	$("#message").html("You're done!")
+        }
     }
 
     function endScreenHTML() {
@@ -124,6 +131,7 @@ $(document).ready(function() {
     // score functions
     function isCorrect() {
         result = "Correct!";
+        imageDisplay();
         transitionHTML();
         correct++;
         gameForm.hide();
@@ -133,6 +141,7 @@ $(document).ready(function() {
 
     function isWrong() {
         result = "Wrong!";
+        imageDisplay();
         transitionHTML();
         wrong++;
         gameForm.hide();
@@ -140,13 +149,18 @@ $(document).ready(function() {
         setTimeout(transitionTimer, 1000); // change wait time
     } // end of isWrong
 
+    function imageDisplay() {
+        $("#placeImage").empty().append('<img src="https://www.wpfreeware.com/wp-content/uploads/2014/09/placeholder-images.jpg">');
+        // $("#transitionPage").append('<img src="'+ images[slideCount] +'">');
+    }
+
     $("#resetBtn").click(function() {
-    	slideCount = 0;
-    	resetAutomatic();
+        slideCount = 0;
+        resetAutomatic();
     });
 
     function resetAutomatic() {
-    	// reset variables
+        // reset variables
         var countdown;
         var intervalId;
         var correct = 0;
