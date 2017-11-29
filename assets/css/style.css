@@ -6,27 +6,34 @@ body {
     background-size: cover;
     /*background-repeat: no-repeat;*/
 }
+
 .card {
-	/*background-color: #FFD8CA;*/
     color: black;
     margin: 0 auto;
     text-align: center;
-    border: 5px solid red; /*delete border*/
-    width: 1280px;
-    height: 720px;
-    /*box-shadow: 10px 10px 5px grey;*/
+    border: 5px solid red;
+    /*delete border*/
 }
+
 #mainTitle {
-    margin-bottom: 10%;
-    background-color: #FFD8CA;
-    border-radius: 25px;
+    padding: 30px 0;
+    margin-bottom: 50px;
+    color: #074A79;
+    background: #d9a7c7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top left, #fffcdc, #d9a7c7);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top left, #fffcdc, #d9a7c7);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 15px;
     box-shadow: 10px 10px 5px grey;
 }
 
 #transitionPage img {
-	width: 300px;
-	height: 300px;
+    width: 300px;
+    height: 300px;
 }
+
 /*
 STARTING SCREEN
 */
@@ -36,15 +43,25 @@ STARTING SCREEN
     box-shadow: 10px 10px 5px grey;
 }
 
-
 /*
 QUESTION FORM
 */
 
-.col-md-6 {
-	height: 150px;
+#question {
+    background: #ec008c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom left, #fc6767, #ec008c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom left, #fc6767, #ec008c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #401100;
+    border-radius: 15px;
 }
 
-.border {
-	border: 3px solid blue;
+.col-md-6 {
+    height: 150px;
+}
+
+.answer {
+    border: 3px solid blue; /*delete border*/
 }
