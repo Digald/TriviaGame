@@ -48,7 +48,7 @@ $(document).ready(function() {
         endScreen.hide();
         gameForm.show();
         questionHTML();
-        countdown = 10; // change question time
+        countdown = 5; // change question time
         $("#timeleft").html(countdown);
         intervalId = setInterval(questionCount, 1000);
 
@@ -93,6 +93,11 @@ $(document).ready(function() {
     // fills up the HTML as it gets ready for next set of questions and answers
     function transitionHTML() {
         $("#result").html(result);
+        if (result == "Correct!") {
+            $("#result").css('color', 'lime');
+        } else {
+            $("#result").css('color', 'red');
+        }
         $("#theAns").html(rightAns[slideCount]);
         if (slideCount < 4) {
         	$("#message").html("The next question will start shortly!");
@@ -134,7 +139,7 @@ $(document).ready(function() {
         correct++;
         gameForm.hide();
         transitionPage.show();
-        setTimeout(transitionTimer, 1000); // change wait time
+        setTimeout(transitionTimer, 5000); // change wait time
     } // end of isCorrect()
 
     function isWrong() {
@@ -144,7 +149,7 @@ $(document).ready(function() {
         wrong++;
         gameForm.hide();
         transitionPage.show();
-        setTimeout(transitionTimer, 1000); // change wait time
+        setTimeout(transitionTimer, 5000); // change wait time
     } // end of isWrong
 
     function imageDisplay() {

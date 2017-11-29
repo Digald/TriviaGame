@@ -7,6 +7,8 @@
     <title>Triva Game</title>
     <!-- bootstrap link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Oswald" rel="stylesheet">
     <!-- style sheet link -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- jquery link -->
@@ -20,25 +22,33 @@
 <body>
     <div class="container card">
         <!-- Starting Page -->
-        <h1 id="mainTitle">League of Legends Trivia Game</h1>
+        <h1 id="mainTitle">League of Legends: Trivia Game</h1>
         <div id="startGame" class="">
-            <button type="button" id="startBtn" class="btn btn-primary btn-lg btn-block">Click Here to Start!</button>
+            <button type="button" id="startBtn" class="btn btn-primary btn-lg">Click Here to Start!</button>
         </div>
         <!-- Questions Form -->
         <div id="multipleChoice" class="">
             <h1 id="question"></h1>
             <h2>Time Left: <span id="timeleft"></span></h2>
             <div class="row">
-                <div id="choice1" class="answer col-md-6"></div>
-                <div id="choice2" class="answer col-md-6"></div>
+                <div class="col-md-6">
+                    <div id="choice1" class="col-md-12 answer"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="choice2" class="col-md-12 answer"></div>
+                </div>
             </div>
             <div class="row">
-                <div id="choice3" class="answer col-md-6"></div>
-                <div id="choice4" class="answer col-md-6"></div>
+                <div class="col-md-6">
+                    <div id="choice3" class="answer col-md-12"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="choice4" class="col-md-12 answer"></div>
+                </div>
             </div>
         </div>
         <!-- Transition Between Questions -->
-        <div id="transitionPage" class="">
+        <div id="transitionPage">
             <h1 id="result"></h1>
             <h2>The answer to the question was: <span id="theAns"></span></h2>
             <h3 id="message"></h3>
@@ -46,7 +56,7 @@
             <div id="placeImage"></div>
         </div>
         <!-- Ending Screen -->
-        <div id="endScreen" class="">
+        <div id="endScreen">
         	<h1>Let's see how well you did-</h1>
         	<h2>Correct Answers: <span id="numRight"></span></h2>
         	<h2>Wrong Answers: <span id="numWrong"></span></h2>

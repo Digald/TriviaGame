@@ -4,64 +4,102 @@ body {
     background-image: url("https://cdn.wallpapersafari.com/44/40/FGJpeK.jpg");
     /*background image color is #A0B7C7*/
     background-size: cover;
-    /*background-repeat: no-repeat;*/
+    font-family: 'Oswald', sans-serif;
 }
 
 .card {
     color: black;
     margin: 0 auto;
     text-align: center;
-    border: 5px solid red;
-    /*delete border*/
 }
 
 #mainTitle {
-    padding: 30px 0;
-    margin-bottom: 50px;
-    color: #074A79;
-    background: #d9a7c7;
+    padding: 50px 0;
+    margin-bottom: 40px;
+    color: black;
+    background: #A1FFCE;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top left, #fffcdc, #d9a7c7);
+    background: -webkit-linear-gradient(to bottom right, #FAFFD1, #A1FFCE);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top left, #fffcdc, #d9a7c7);
+    background: linear-gradient(to bottom right, #FAFFD1, #A1FFCE);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 15px;
     box-shadow: 10px 10px 5px grey;
+    font-size: 50px;
+    font-family: 'Luckiest Guy', cursive;
 }
-
-#transitionPage img {
-    width: 300px;
-    height: 300px;
-}
-
 /*
 STARTING SCREEN
 */
 
 .btn {
-    font-size: 30px;
+    font-size: 40px;
     box-shadow: 10px 10px 5px grey;
 }
-
 /*
 QUESTION FORM
 */
 
-#question {
+#multipleChoice {
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 10px 10px 5px grey;
+    background: #3E9797;
+}
+
+#multipleChoice h2 {
+    color: black;
     background: #ec008c;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom left, #fc6767, #ec008c);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom left, #fc6767, #ec008c);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #401100;
-    border-radius: 15px;
+    display: inline-block;
+    padding: 0 50px;
+    border-radius: 25px;
 }
 
+#question {
+    color: white;
+    border-radius: 15px;
+}
 .col-md-6 {
     height: 150px;
 }
 
 .answer {
-    border: 3px solid blue; /*delete border*/
+    /*border: 3px solid blue;*/
+    border-radius: 25px;
+    color: white;
+    font-size: 75px;
+    /*delete border*/
+    background: #74ebd5;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top right, #ACB6E5, #74ebd5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top right, #ACB6E5, #74ebd5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 10px 10px 5px black;
+}
+/*TRANSITION PAGE*/
+#transitionPage {
+    background: #3E9797 ;
+    color: white;
+    border-radius: 25px
+}
+#transitionPage img {
+    width: 300px;
+    height: 300px;
+    padding: 20px 0;
+}
+/*END SCREEN*/
+#endScreen {
+    background: #3E9797;
+    color: white;
+    padding: 5px 0 20px 0;
+    border-radius: 100px;
+}
+#resetBtn {
+    color: black;
 }
