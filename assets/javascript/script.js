@@ -19,7 +19,6 @@ $(document).ready(function() {
         "What little animals can we see in the Howling Abyss?",
         "Who is the most hated champion in League of Legends?"
     ];
-
     var answers = [
         ["Volibear", "Shyvana", "Kennen", "Rengar"],
         ["Lee Sin", "Teemo", "Sona", "Quinn"],
@@ -27,8 +26,7 @@ $(document).ready(function() {
         ["Teemos", "Wolves", "Poros", "Cats"],
         ["Skarner", "Lulu", "Bard", "Teemo"]
     ];
-
-    var images = [];
+    var imagearr = ["assets/images/voli.png", "assets/images/sona.png", "assets/images/ahri.png", "assets/images/poro.png", "assets/images/teemo.png"];
     var correctAnswer = [0, 2, 0, 2, 3];
     var rightAns = ["Volibear", "Sona", "Fox", "Poros", "Teemo"];
     var chosenAnswer;
@@ -43,7 +41,7 @@ $(document).ready(function() {
     function stop() {
         clearInterval(intervalId);
     }
-    // Timer and display questions
+    // Timer and HTML for questions
     function questionTimer() {
         startGame.hide();
         transitionPage.hide();
@@ -67,7 +65,7 @@ $(document).ready(function() {
             $("#timeleft").html(countdown);
         }
     }
-
+    // sets up next question during transition page or else it moves onto end screen
     function transitionTimer() {
         console.log(slideCount);
         if (slideCount < 4) {
@@ -84,7 +82,7 @@ $(document).ready(function() {
         }
     }
 
-    // functions to fill in HTML upon showing the differnt screens
+    // fills up the HTML for the questions and answers
     function questionHTML() {
         $("#question").html(questions[slideCount]);
         $("#choice1").html(answers[slideCount][0]);
@@ -92,7 +90,7 @@ $(document).ready(function() {
         $("#choice3").html(answers[slideCount][2]);
         $("#choice4").html(answers[slideCount][3]);
     }
-
+    // fills up the HTML as it gets ready for next set of questions and answers
     function transitionHTML() {
         $("#result").html(result);
         $("#theAns").html(rightAns[slideCount]);
@@ -102,7 +100,7 @@ $(document).ready(function() {
         	$("#message").html("You're done!")
         }
     }
-
+    // fills up HTML to show you the results of trivia quiz
     function endScreenHTML() {
         var finalScore = Math.round((correct / questions.length) * 100);
         $("#numRight").html(correct);
@@ -150,12 +148,13 @@ $(document).ready(function() {
     } // end of isWrong
 
     function imageDisplay() {
-        $("#placeImage").empty().append('<img src="https://www.wpfreeware.com/wp-content/uploads/2014/09/placeholder-images.jpg">');
-        // $("#transitionPage").append('<img src="'+ images[slideCount] +'">');
+        $("#placeImage").empty().append('<img src="'+ imagearr[slideCount] +'">');
     }
 
     $("#resetBtn").click(function() {
         slideCount = 0;
+        correct = 0;
+        wrong = 0;
         resetAutomatic();
     });
 
@@ -163,8 +162,6 @@ $(document).ready(function() {
         // reset variables
         var countdown;
         var intervalId;
-        var correct = 0;
-        var wrong = 0;
         var result = "";
         questionTimer();
 
