@@ -1,7 +1,6 @@
 body {
     overflow: auto;
-    background-color: #222;
-    background-image: url("https://cdn.wallpapersafari.com/44/40/FGJpeK.jpg");
+    background-image: url("../images/background.png");
     /*background image color is #A0B7C7*/
     background-size: cover;
     font-family: 'Oswald', sans-serif;
@@ -16,14 +15,9 @@ body {
 #mainTitle {
     padding: 50px 0;
     margin-bottom: 40px;
-    color: black;
-    background: #A1FFCE;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom right, #FAFFD1, #A1FFCE);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom right, #FAFFD1, #A1FFCE);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-radius: 15px;
+    color: #402400;
+    background: #FFE8CA;
+    border-radius: 100px;
     box-shadow: 10px 10px 5px grey;
     font-size: 50px;
     font-family: 'Luckiest Guy', cursive;
@@ -44,7 +38,7 @@ QUESTION FORM
     border-radius: 25px;
     padding: 20px;
     box-shadow: 10px 10px 5px grey;
-    background: #3E9797;
+    background: #FFD8CA;
 }
 
 #multipleChoice h2 {
@@ -57,11 +51,11 @@ QUESTION FORM
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: inline-block;
     padding: 0 50px;
-    border-radius: 25px;
+    border-radius: 100px;
 }
 
 #question {
-    color: white;
+    color: #BD3300;
     border-radius: 15px;
 }
 .col-md-6 {
@@ -69,24 +63,18 @@ QUESTION FORM
 }
 
 .answer {
-    /*border: 3px solid blue;*/
     border-radius: 25px;
-    color: white;
+    color: #FFE8CA;
     font-size: 75px;
-    /*delete border*/
-    background: #74ebd5;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top right, #ACB6E5, #74ebd5);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top right, #ACB6E5, #74ebd5);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #BD3300;
     box-shadow: 10px 10px 5px black;
 }
 /*TRANSITION PAGE*/
 #transitionPage {
-    background: #3E9797 ;
-    color: white;
-    border-radius: 25px
+    background: #FFD8CA ;
+    color: #401100;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px grey;
 }
 #transitionPage img {
     width: 300px;
@@ -95,10 +83,11 @@ QUESTION FORM
 }
 /*END SCREEN*/
 #endScreen {
-    background: #3E9797;
-    color: white;
+    background: #FFD8CA;
+    color: #BD3300;
     padding: 5px 0 20px 0;
     border-radius: 100px;
+    box-shadow: 10px 10px 5px grey;
 }
 #resetBtn {
     color: black;

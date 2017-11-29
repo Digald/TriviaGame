@@ -48,7 +48,7 @@ $(document).ready(function() {
         endScreen.hide();
         gameForm.show();
         questionHTML();
-        countdown = 5; // change question time
+        countdown = 15; // change question time
         $("#timeleft").html(countdown);
         intervalId = setInterval(questionCount, 1000);
 
@@ -139,7 +139,7 @@ $(document).ready(function() {
         correct++;
         gameForm.hide();
         transitionPage.show();
-        setTimeout(transitionTimer, 5000); // change wait time
+        setTimeout(transitionTimer, 6000); // change wait time
     } // end of isCorrect()
 
     function isWrong() {
@@ -149,7 +149,7 @@ $(document).ready(function() {
         wrong++;
         gameForm.hide();
         transitionPage.show();
-        setTimeout(transitionTimer, 5000); // change wait time
+        setTimeout(transitionTimer, 6000); // change wait time
     } // end of isWrong
 
     function imageDisplay() {
